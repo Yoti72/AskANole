@@ -1,2 +1,2 @@
 # AskANole
-A platform to connect fellow FSU Students to services from fellow FSU students 
+“Where Noles Help Noles. Trade, Task, and Triumph Together.”
