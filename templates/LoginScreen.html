@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Screen</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action = "{{url_for('welcome')}}" method = "POST">
+        <p>Username: <input type="text" name="Username"> </p>
+        <p>Password: <input type="password" name="Password"></p>
+        <input type = "submit" value = "Login">
+    </form>
+    <h2>Don't have an account?</h2>
+    <a href = "/signup"><Button>Sign Up</Button></a>
+    
+
+</body>
+</html> 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Screen</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action = "{{url_for('signupvalid')}}" method = "POST">
+        <p>First Name: <input type="text" name="First"> </p>
+        <p>Last Name: <input type="text" name="Last"></p>
+        <p>FSU ID: <input type="text" name="Fsuid"> </p>
+        <p>Major: <input type="text" name="Major"> </p>
+        <p>Username: <input type="text" name="Username"> </p>
+        <p>Password: <input type="text" name="Password"></p>
+        <p>Confirm Password: <input type="text" name="ConfirmPassword"></p>
+        <input type = "submit" value = "Submit">
+    </form>
+    <h2>Already have an account?</h2>
+    <a href = "/"><Button>Login</Button></a>
+</body>
+</html>
