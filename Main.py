@@ -15,6 +15,31 @@ def index():
 def signup():
     return render_template('SignUp.html')
 
+@app.route('/signupvalid', methods = ['POST', 'GET'])
+def signupvalid():
+    if request.method == "POST":
+        try: 
+            first = request.form['First']
+            last = request.form['Last']
+            fsuid = request.form['Fsuid']
+            username = request.form['Username']
+            password = request.form['Password']
+            confirmPass = request.form['ConfirmPassword']
+            user = username
+
+            con = sqlite3.connect('database.db')
+            
+            with sqlite3.connect('database.db') as con:
+                cur = con.cursor()
+                if(password == confirmPass):
+                    cur.execute("INSERT INTO Login (Username,Password,First,Last,FSUID) VALUES (?,?,?,?,?)", (username, password, first, last, fsuid))
+            return redirect("/")
+        except:
+            con.rollback()
+            return render_template('Error.html')
+        finally:
+            con.close()
+
 
 if __name__ == "__main__":
     conn = sqlite3.connect('database.db')
