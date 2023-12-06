@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 import sqlite3
-import Setup
 import random
 
 
@@ -39,6 +38,32 @@ def signupvalid():
             return render_template('Error.html')
         finally:
             con.close()
+
+@app.route('/welcome', methods = ['POST', 'GET'])
+def welcome():
+    if request.method == "POST":
+        try: 
+            username = request.form['Username']
+            password = request.form['Password']
+
+            conn = sqlite3.connect('database.db')
+            cursor = conn.cursor()
+
+            cursor.execute("SELECT FSUID FROM Login WHERE Username = ? AND Password = ?", (username,password))
+            rows = cursor.fetchall()
+            if len(rows) == 0:
+                return render_template("NoMatchingUser.html")
+            user = rows[0][0]
+            return redirect('/main')
+        except:
+            return redirect("/")
+        finally:
+            conn.close()
+
+@app.route('/main', methods = ['POST', 'GET'])
+def main():
+    return render_template('MainPage.html')
+
 
 
 if __name__ == "__main__":
