@@ -31,12 +31,10 @@ cursor.execute('''
 
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS Comments (
-        post_id INTEGER,
-        comment_id INTEGER,
-        content TEXT,
-        author TEXT,
-        PRIMARY KEY (post_id, comment_id),
-        FOREIGN KEY (post_id) REFERENCES YourTable(id)
+        PostId INTEGER,
+        CommentId INTEGER PRIMARY KEY AUTOINCREMENT,
+        Content TEXT,
+        Author TEXT
     )
 ''')
 cursor.close()

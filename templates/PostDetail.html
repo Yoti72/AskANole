@@ -11,6 +11,19 @@
         <input type="hidden" name="fsuid" value="{{fsuid}}">
         <button type="submit">Send Message</button>
     </form>
+
+    <h2>Comments:</h2>
+        {% for comment in comments %}
+        <div class="comments">
+            <p>{{comment[0]}}: {{ comment[1]}}</p>
+        </div>
+        {% endfor %}
+        <form method="POST" action="/comment">
+            <input type="hidden" name="post_id" value="{{post_id}}">
+            <p>Post comment: <textarea name="content"></textarea><p>
+            <button type="submit">Post</button>
+        </form>
+
     <a href = "/main"><Button>Back</Button></a>
     
 

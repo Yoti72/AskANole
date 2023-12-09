@@ -107,7 +107,11 @@ def post_detail(post_id):
     authorFSUID = post[0][1]
     title = post[0][2]
     description = post[0][3]
-    return render_template('PostDetail.html', post_id=post_id, title=title, description=description, fsuid=authorFSUID)
+
+    cur.execute("SELECT Author, Content FROM Comments WHERE PostId = ? ORDER BY CommentId ASC", (post_id,))
+    comments = cur.fetchall()
+
+    return render_template('PostDetail.html', post_id=post_id, title=title, description=description, fsuid=authorFSUID, comments=comments)
 
 @app.route('/messages', methods = ['POST', 'GET'])
 def messages():
@@ -190,6 +194,30 @@ def searched():
 
             posts = cur.fetchall()
             return render_template('MainPage.html', posts=posts)
+        
+        except:
+            conn.rollback()
+            return render_template('Error.html')
+        finally:
+            conn.close()
+
+@app.route("/comment", methods = ["POST", "GET"])
+def comment():
+    if request.method == "POST":
+        try:
+            print(1)
+            post_id = request.form["post_id"]
+            print(post_id)
+            content = request.form["content"]
+            print(content)
+            conn = sqlite3.connect('database.db')
+            print(4)
+            cur = conn.cursor()
+            print(user[0])
+            cur.execute("INSERT INTO Comments (PostId,Content,Author) VALUES (?,?,?)", (post_id, content, user[0]))
+            print(6)
+            conn.commit()
+            return redirect('/post_detail/' + post_id)
         
         except:
             conn.rollback()
