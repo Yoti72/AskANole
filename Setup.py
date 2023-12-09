@@ -1,10 +1,42 @@
 import sqlite3
 
-#Create database with Tables: Login, Comments, Likes, Messages
 conn = sqlite3.connect('database.db')
 cursor = conn.cursor()
-cursor.execute('CREATE TABLE IF NOT EXISTS Login (Username TEXT, Password TEXT, First TEXT, Last TEXT, FSUID TEXT, ProfilePic INT)')
-cursor.execute('CREATE TABLE IF NOT EXISTS Posts (Username TEXT, PostType INT, Title TEXT, Description TEXT)')
-cursor.execute('CREATE TABLE IF NOT EXISTS Replies (PrimaryUser TEXT, SecondaryUser TEXT, Title TEXT, UserResponding TEXT, Index INT)')
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Login (
+        FSUID TEXT,
+        Password TEXT,
+        First TEXT,
+        Last TEXT
+    )
+''')
 
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Posts (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        FSUID TEXT,
+        Title TEXT,
+        Description TEXT
+    )
+''')
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Replies (
+        PrimaryUser TEXT,
+        SecondaryUser TEXT,
+        Message TEXT,
+        Ind INTEGER PRIMARY KEY AUTOINCREMENT
+    )
+''')
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Comments (
+        post_id INTEGER,
+        comment_id INTEGER,
+        content TEXT,
+        author TEXT,
+        PRIMARY KEY (post_id, comment_id),
+        FOREIGN KEY (post_id) REFERENCES YourTable(id)
+    )
+''')
 cursor.close()

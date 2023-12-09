@@ -5,7 +5,32 @@
     <title>Main Page</title>
 </head>
 <body>
-    <h1>This is the main Page</h1>
+    <div class="header">
+        <h1>Ask-a-Nole</h1>
+        <div class="user-actions">
+            <a href="/addpost"><button type="button">Add Post</button></a>
+            <button type="button">Edit Profile</button>
+            <a href="/messages"><button type="button">Messages</button></a>
+            <a href="/"><button type="button">Sign Out</button></a>
+        </div>
+    </div>
+
+    <div class="posts">
+        <div class="search-bar">
+            <form method="POST" action="/search">
+                <input type="text" placeholder="Search..." name="searched">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        {% for post in posts %}
+        <div class="post">
+            <h2><a href="{{ url_for('post_detail', post_id=post[0]) }}">{{ post[2] }}</a></h2>
+            <p>{{ post.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
 
 </body>
 </html> 
+

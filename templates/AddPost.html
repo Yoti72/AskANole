@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post Screen</title>
+</head>
+<body>
+    <h1>Add Post</h1>
+    <form action = "{{url_for('added')}}" method = "POST">
+        <p>Title: <input type="text" name="Title"> </p>
+        <p>Description: <textarea name="Description"></textarea></p>
+        <input type = "submit" value = "Post">
+    </form>
+    
+</body>
+</html> 
