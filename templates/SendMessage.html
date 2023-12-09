@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+</head>
+<body>
+    <h1>Your messages:</h1>
+        <p>Messages With: {{other}}</p>
+        {% for author_and_message in authors_and_messages %}
+        <p>{{author_and_message[0]}}: {{author_and_message[1]}}</p>
+        {% endfor %}
+        <form method="POST" action="/send">
+            <input type="hidden" name="other" value="{{other}}">
+            <p>Send Message: <textarea name="message"></textarea><p>
+            <button type="submit">Send</button>
+        </form>
+
+    <a href="/main"><button>Back</button></a>
+
+</body>
+</html> 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Detail Screen</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <p>User: {{fsuid}}</p>
+    <p>{{description}}</p><form method="POST" action="/sendmessages">
+        <input type="hidden" name="fsuid" value="{{fsuid}}">
+        <button type="submit">Send Message</button>
+    </form>
+    <a href = "/main"><Button>Back</Button></a>
+    
+
+</body>
+</html> 
