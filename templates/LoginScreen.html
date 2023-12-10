@@ -4,29 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSU Login</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <title>Ask-A-Nole Login</title>
+    <link rel="stylesheet" href="/statics/mystyle.css">
 </head>
 
 <body>
 
-    <div class="login-container">
-        <div class="logo">
-            <img src="your-logo.png" alt="Your Logo">
-        </div>
+    <form action="{{url_for('welcome')}}" method="POST">
 
-        <div class="input-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username">
-        </div>
+        <div class="login-container">
+            <!-- Logo Place Holder -->
+            <div class="logo">
+                <img src="your-logo.png" alt="Your Logo">
+            </div>
 
-        <div class="input-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password">
-        </div>
+            <!-- Login Input Group -->
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="Username" placeholder="FSU ID">
+            </div>
 
-        <button class="signup-btn">Sign Up</button>
-    </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="Password" placeholder="Password">
+            </div>
+
+            <!-- Login Button -->
+            <button class="login-button" type="submit">Login</button>
+
+            <!-- Sign Up Option -->
+            <h2>Don't have an account?</h2>
+            <a href="/signup"><Button>Sign Up</Button></a>
+
+        </div>
+    </form>
 
 </body>
 
