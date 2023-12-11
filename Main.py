@@ -121,8 +121,6 @@ def messages():
     cur.execute("SELECT PrimaryUser, SecondaryUser FROM Replies WHERE PrimaryUser = ? OR SecondaryUser = ? ORDER BY Ind DESC", (user[0], user[0]))
     replies = cur.fetchall()
 
-    if replies == []:
-        return render_template("NoReplies.html")
 
     fsuids = set()
     for reply in replies:
