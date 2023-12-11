@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 import sqlite3
-import random
 
 user = ['']
 
@@ -19,6 +18,7 @@ def signup():
 @app.route('/signupvalid', methods = ['POST', 'GET'])
 def signupvalid():
     if request.method == "POST":
+        con = sqlite3.connect('database.db')
         try:
             first = request.form['First']
             last = request.form['Last']
@@ -26,8 +26,6 @@ def signupvalid():
             password = request.form['Password']
             confirm_pass = request.form['ConfirmPassword']
             user[0] = fsuid
-
-            con = sqlite3.connect('database.db')
 
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
@@ -77,17 +75,14 @@ def addpost():
 @app.route('/added', methods = ['POST', 'GET'])
 def added():
     if request.method == "POST":
+        con = sqlite3.connect('database.db')
         try:
             title = request.form['Title']
             description = request.form['Description']
 
-            con = sqlite3.connect('database.db')
-
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
                 cur.execute("INSERT INTO Posts (FSUID, Title,Description) VALUES (?,?,?)", (user[0], title, description))
-
-
         except:
             con.rollback()
             return render_template('Error.html')
@@ -121,7 +116,6 @@ def messages():
     cur.execute("SELECT PrimaryUser, SecondaryUser FROM Replies WHERE PrimaryUser = ? OR SecondaryUser = ? ORDER BY Ind DESC", (user[0], user[0]))
     replies = cur.fetchall()
 
-
     fsuids = set()
     for reply in replies:
         if reply[0] != user[0]:
@@ -139,9 +133,9 @@ def messages():
 @app.route('/sendmessages', methods = ['POST', 'GET'])
 def sendmessages():
     if request.method == 'POST':
+        conn = sqlite3.connect('database.db')
         try:
             other_person = request.form["fsuid"]
-            conn = sqlite3.connect('database.db')
             cur = conn.cursor()
 
             cur.execute("SELECT PrimaryUser, Message FROM Replies WHERE (PrimaryUser = ? AND SecondaryUser = ?) OR (PrimaryUser = ? AND SecondaryUser = ?) ORDER BY Ind ASC", (user[0], other_person, other_person, user[0]))
@@ -155,10 +149,10 @@ def sendmessages():
 @app.route('/send', methods = ['POST','GET'])
 def sendMessages():
     if request.method == 'POST':
+        conn = sqlite3.connect('database.db')
         try:
             other = request.form["other"]
             message = request.form["message"]
-            conn = sqlite3.connect('database.db')
             cur = conn.cursor()
             cur.execute("INSERT INTO Replies (PrimaryUser,SecondaryUser,Message) VALUES (?,?,?)", (user[0], other, message))
             conn.commit()
@@ -176,11 +170,10 @@ def sendMessages():
 @app.route("/search", methods = ["POST", "GET"])
 def searched():
     if request.method == "POST":
+        conn = sqlite3.connect('database.db')
         try:
             searched = request.form["searched"]
-            conn = sqlite3.connect('database.db')
             cur = conn.cursor()
-
             query = """
                 SELECT * FROM Posts
                 WHERE FSUID LIKE ? COLLATE NOCASE
@@ -202,18 +195,12 @@ def searched():
 @app.route("/comment", methods = ["POST", "GET"])
 def comment():
     if request.method == "POST":
+        conn = sqlite3.connect('database.db')
         try:
-            print(1)
             post_id = request.form["post_id"]
-            print(post_id)
             content = request.form["content"]
-            print(content)
-            conn = sqlite3.connect('database.db')
-            print(4)
             cur = conn.cursor()
-            print(user[0])
             cur.execute("INSERT INTO Comments (PostId,Content,Author) VALUES (?,?,?)", (post_id, content, user[0]))
-            print(6)
             conn.commit()
             return redirect('/post_detail/' + post_id)
 
@@ -225,7 +212,4 @@ def comment():
 
 
 if __name__ == "__main__":
-    conn = sqlite3.connect('database.db')
-    cursor = conn.cursor()
-    cursor.close()
     app.run(debug=True)
