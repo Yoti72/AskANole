@@ -19,7 +19,7 @@ def signup():
 @app.route('/signupvalid', methods = ['POST', 'GET'])
 def signupvalid():
     if request.method == "POST":
-        try: 
+        try:
             first = request.form['First']
             last = request.form['Last']
             fsuid = request.form['Fsuid']
@@ -28,7 +28,7 @@ def signupvalid():
             user[0] = fsuid
 
             con = sqlite3.connect('database.db')
-            
+
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
                 if(password == confirm_pass):
@@ -43,7 +43,7 @@ def signupvalid():
 @app.route('/welcome', methods = ['POST', 'GET'])
 def welcome():
     if request.method == "POST":
-        try: 
+        try:
             fsuid = request.form['fsuid']
             password = request.form['Password']
 
@@ -67,7 +67,7 @@ def main():
     cur = conn.cursor()
     cur.execute("SELECT * FROM Posts ORDER BY Id DESC")
     posts = cur.fetchall()
-    
+
     return render_template('MainPage.html', posts=posts)
 
 @app.route('/addpost', methods = ['POST', 'GET'])
@@ -77,12 +77,12 @@ def addpost():
 @app.route('/added', methods = ['POST', 'GET'])
 def added():
     if request.method == "POST":
-        try: 
+        try:
             title = request.form['Title']
             description = request.form['Description']
 
             con = sqlite3.connect('database.db')
-            
+
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
                 cur.execute("INSERT INTO Posts (FSUID, Title,Description) VALUES (?,?,?)", (user[0], title, description))
@@ -123,7 +123,7 @@ def messages():
 
     if replies == []:
         return render_template("NoReplies.html")
-    
+
     fsuids = set()
     for reply in replies:
         if reply[0] != user[0]:
@@ -145,14 +145,14 @@ def sendmessages():
             other_person = request.form["fsuid"]
             conn = sqlite3.connect('database.db')
             cur = conn.cursor()
-            
+
             cur.execute("SELECT PrimaryUser, Message FROM Replies WHERE (PrimaryUser = ? AND SecondaryUser = ?) OR (PrimaryUser = ? AND SecondaryUser = ?) ORDER BY Ind ASC", (user[0], other_person, other_person, user[0]))
             authors_and_messages = cur.fetchall()
 
             return render_template("SendMessage.html", authors_and_messages=authors_and_messages, other=other_person)
         except:
             return render_template('Error.html')
-        
+
 
 @app.route('/send', methods = ['POST','GET'])
 def sendMessages():
@@ -182,19 +182,19 @@ def searched():
             searched = request.form["searched"]
             conn = sqlite3.connect('database.db')
             cur = conn.cursor()
-            
+
             query = """
-                SELECT * FROM Posts 
-                WHERE FSUID LIKE ? COLLATE NOCASE 
-                OR Title LIKE ? COLLATE NOCASE 
-                OR Description LIKE ? COLLATE NOCASE 
+                SELECT * FROM Posts
+                WHERE FSUID LIKE ? COLLATE NOCASE
+                OR Title LIKE ? COLLATE NOCASE
+                OR Description LIKE ? COLLATE NOCASE
                 ORDER BY Id DESC"""
-            
+
             cur.execute(query, ('%' + searched + '%', '%' + searched + '%', '%' + searched + '%'))
 
             posts = cur.fetchall()
             return render_template('MainPage.html', posts=posts)
-        
+
         except:
             conn.rollback()
             return render_template('Error.html')
@@ -218,7 +218,7 @@ def comment():
             print(6)
             conn.commit()
             return redirect('/post_detail/' + post_id)
-        
+
         except:
             conn.rollback()
             return render_template('Error.html')
