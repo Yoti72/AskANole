@@ -1,0 +1,127 @@
+/*
+    FSU Color Scheme:
+    #782F40 for Garnet
+    #CEB888 for Gold
+    #FFFFFF for White
+    #000000 for Black
+*/
+
+/* ===================== Website Body ===================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #782F40;
+    /* Light gray background */
+}
+
+/* ===================== Login Box ===================== */
+.login-container {
+
+    max-width: 500px;
+    margin: 80px auto;
+    margin-top: 80px;
+    background-color: #FFFFFF;
+    /* White container background */
+    padding: 20px;
+    border-style: inset;
+    border-color: #CEB888;
+    border-width: 3px;
+    border-radius: 8px;
+    box-shadow: #240108 0px 0px 7px 0px;
+}
+
+/* ===================== Logo ===================== */
+.logo {
+    background-color: #CEB888;
+    box-shadow: #240108 0px 0px 10px 0px;
+    background-position-y: center;
+    border: 3px solid #782F40;
+    text-align: center;
+    margin: 25px;
+}
+
+.logo img {
+    width: 350px;
+    /* Adjust the width as needed */
+    height: 140px;
+}
+
+/* ===================== Login Form ===================== */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-button {
+    /* Garnet color */
+    background-color: #782F40;
+    /* Gold color */
+    color: #CEB888;
+    padding: 10px 15px;
+    border-style: inset;
+    border-color: #CEB888;
+    border-width: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    width: 100%;
+}
+
+.login-button:hover {
+    background-color: #5E1E2A;
+    /* Darker Garnet color on hover */
+}
+
+.signup-container {
+    font-size: 14px;
+    text-decoration: black;
+    max-width: 220px;
+    max-height: 50px;
+    margin: 10px auto;
+
+    background-color: #FFFFFF;
+    /* White container background */
+    padding: 1px 1px 45px 1px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-shadow: #240108 0px 0px 7px 0px;
+}
+
+.signup-button {
+    /* Garnet color */
+    background-color: #782F40;
+    /* Gold color */
+    color: #CEB888;
+    margin: 1px auto;
+    padding: 6px;
+    border-style: inset;
+    border-color: #CEB888;
+    border-width: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: 50%;
+    align-content: center;
+}
+
+.signup-button:hover {
+    background-color: #5E1E2A;
+    /* Darker Garnet color on hover */
+}
