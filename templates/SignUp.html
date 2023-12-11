@@ -1,21 +1,62 @@
+<!-- Iska -->
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Login Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Screen</title>
+    <link rel="stylesheet" href="/static/SignupIVstyle..css" />
+
 </head>
+
 <body>
     <!-- Keep Type Values -->
-    <h1>Sign Up</h1>
-    <form action = "{{url_for('signupvalid')}}" method = "POST">
-        <p>First Name: <input type="text" name="First"> </p>
-        <p>Last Name: <input type="text" name="Last"></p>
-        <p>FSU ID: <input type="text" name="Fsuid"> </p>
-        <p>Password: <input type="text" name="Password"></p>
-        <p>Confirm Password: <input type="text" name="ConfirmPassword"></p>
-        <input type = "submit" value = "Submit">
+    <form action="{{url_for('signupvalid')}}" method="POST">
+
+        <div class="logo">
+            <img src="/Assets/Ask-A-Nole-Logo.png" />
+        </div>
+
+        <div class="signup-container">
+            <!-- Login Input Group -->
+            <div class="input-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="First" placeholder="First Name" />
+            </div>
+
+            <div class="input-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="Last" placeholder="Last Name" />
+            </div>
+
+            <div class="input-group">
+                <label for="fsuid">FSU ID:</label>
+                <input type="text" id="fsuid" name="Fsuid" placeholder="FSU ID" />
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="Password" placeholder="Password" />
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="ConfirmPassword" placeholder="Confirm Password" />
+            </div>
+
+            <!-- SignUp Button -->
+            <button class="signup-button" type="submit" value="Submit">Sign Up</button>
+        </div>
+
     </form>
-    <h2>Already have an account?</h2>
-    <a href = "/"><Button>Login</Button></a>
+    <div class="login-container">
+        <!-- Login Option -->
+        <p>Already have an account?</p>
+        <a href="/"><button class="login-button">Login</button></a>
+    </div>
 </body>
+
 </html>
