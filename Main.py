@@ -43,11 +43,11 @@ def signupvalid():
 @app.route('/welcome', methods = ['POST', 'GET'])
 def welcome():
     if request.method == "POST":
+        conn = sqlite3.connect('database.db')
         try:
-            fsuid = request.form['fsuid']
+            fsuid = request.form['FSUID']
             password = request.form['Password']
 
-            conn = sqlite3.connect('database.db')
             cursor = conn.cursor()
 
             cursor.execute("SELECT * FROM Login WHERE FSUID = ? AND Password = ?", (fsuid,password))
