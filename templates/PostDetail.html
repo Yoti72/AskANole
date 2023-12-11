@@ -5,6 +5,9 @@
     <title>Post Detail Screen</title>
     <style>
 
+        .container{
+            text-align: center;
+        }
         body {
             background-image: url('../statics/Assest/FSU_Stadium.jpg');
             background-repeat: no-repeat;
@@ -64,8 +67,8 @@
 
 <body>
     <div class = "container">
-        <h1>{{title}}</h1>
         <p>User: {{fsuid}}</p>
+        <h1>{{title}}</h1>
         <p>{{description}}</p><form method="POST" action="/sendmessages">
             <input type="hidden" name="fsuid"  value="{{fsuid}}">
             <button type="submit">Send Message</button>
