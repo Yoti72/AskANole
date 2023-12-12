@@ -1,97 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post Detail Screen</title>
-    <style>
 
-        .container{
-            text-align: center;
-        }
-        body {
-            background-image: url('/static/FSU_Stadium.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <title>Post Detail Screen</title>
+        <style>
+            .container {
+                text-align: center;
+            }
 
-        .post-comment-container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #782F40;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+            body {
+                background-image: url('/static/FSU_Stadium.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
 
-        .post-comment-container h2 {
-            font-size: 24px;
-            color: #333;
-        }
+            .post-comment-container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #782F40;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
 
-        .post-comment-container p {
-            font-size: 20px;
-            color: #FFFFFF;
-            line-height: 1.6;
-            text-align: center;
-        }
+            .post-comment-container h2 {
+                font-size: 24px;
+                color: #333;
+            }
 
-        input[type="text"], textarea {
-            width: 100%; /* Make input fields take up the full width of their container */
-            padding: 12px 20px; /* Add some padding */
-            margin: 8px 0; /* Add some margin */
-            box-sizing: border-box; /* Make sure padding and width stays inside the box */
-            border: 2px solid #ccc; /* Add a border */
-            border-radius: 4px; /* Add rounded corners */
-        }
+            .post-comment-container p {
+                font-size: 20px;
+                color: #FFFFFF;
+                line-height: 1.6;
+                text-align: center;
+            }
 
-        .post-comment {
-            text-align: center; /* Center the text */
-            font-family: Arial, sans-serif; /* Change the font */
-            color: #FFFFFF; /* Make the text color white */
-            font-size: 20px;
-        }
+            input[type="text"],
+            textarea {
+                width: 100%;
+                /* Make input fields take up the full width of their container */
+                padding: 12px 20px;
+                /* Add some padding */
+                margin: 8px 0;
+                /* Add some margin */
+                box-sizing: border-box;
+                /* Make sure padding and width stays inside the box */
+                border: 2px solid #ccc;
+                /* Add a border */
+                border-radius: 4px;
+                /* Add rounded corners */
+            }
 
-        button[type="submit"] {
-            padding: 10px 20px; /* Increase the size of the button */
-            font-size: 16px; /* Increase the font size */
-            width: 100%;
-        }
+            .post-comment {
+                text-align: center;
+                /* Center the text */
+                font-family: Arial, sans-serif;
+                /* Change the font */
+                color: #FFFFFF;
+                /* Make the text color white */
+                font-size: 20px;
+            }
 
-        button[type="submit"]:hover {
-            background-color: #CEB888;
-        }
+            button[type="submit"] {
+                padding: 10px 20px;
+                /* Increase the size of the button */
+                font-size: 16px;
+                /* Increase the font size */
+                width: 100%;
+            }
 
+            button[type="submit"]:hover {
+                background-color: #CEB888;
+            }
+        </style>
+    </head>
 
-    </style>
-</head>
+    <body>
+        <div class="container">
+            <p>User: {{fsuid}}</p>
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>
+            <form method="POST" action="/sendmessages">
+                <input type="hidden" name="fsuid" value="{{fsuid}}">
+                <button type="submit">Send Message</button>
+            </form>
 
-<body>
-    <div class = "container">
-        <p>User: {{fsuid}}</p>
-        <h1>{{title}}</h1>
-        <p>{{description}}</p><form method="POST" action="/sendmessages">
-            <input type="hidden" name="fsuid"  value="{{fsuid}}">
-            <button type="submit">Send Message</button>
-        </form>
-
-        <h2>Comments:</h2>
+            <h2>Comments:</h2>
             {% for comment in comments %}
             <div class="comments">
                 <p>{{comment[0]}}: {{ comment[1]}}</p>
             </div>
             {% endfor %}
-            <div class = "post-comment-container">
+            <div class="post-comment-container">
                 <form method="POST" action="/comment">
-                    <input type="hidden" name="post_id" placeholder="Post Comment" value="{{post_id}}" >
-                    <p class = "post-comment">Post comment: <textarea name="content"></textarea><p>
-                    <button type="submit">Post</button>
+                    <input type="hidden" name="post_id" placeholder="Post Comment" value="{{post_id}}">
+                    <p class="post-comment">Post comment: <textarea name="content"></textarea>
+                    <p>
+                        <button type="submit">Post</button>
                 </form>
 
-                <a href = "/main"><Button>Back</Button></a>
+                <a href="/main"><Button>Back</Button></a>
             </div>
 
-    </div>
+        </div>
 
 
-</body>
+    </body>
+
 </html>

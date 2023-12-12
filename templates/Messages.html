@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Messages</title>
-</head>
-<body>
-    <h1>Your messages:</h1>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Messages</title>
+    </head>
+
+    <body>
+        <h1>Your messages:</h1>
 
         {% for reply in replies %}
         <p>
             {{ reply[1] }}
-            <form method="POST" action="/sendmessages">
-                <input type="hidden" name="fsuid" value="{{reply[0]}}">
-                <button type="submit">View Conversation</button>
-            </form>
+        <form method="POST" action="/sendmessages">
+            <input type="hidden" name="fsuid" value="{{reply[0]}}">
+            <button type="submit">View Conversation</button>
+        </form>
         </p>
         {% endfor %}
 
         <a href="/main"><button>Back</button></a>
 
-</body>
-</html> 
+    </body>
+
+</html>

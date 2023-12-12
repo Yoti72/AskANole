@@ -4,60 +4,60 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignUp Screen</title>
-    <link rel="stylesheet" href="/static/SignupIVstyle.css" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SignUp Screen</title>
+        <link rel="stylesheet" href="/static/SignupIVstyle.css" />
 
-</head>
+    </head>
 
-<body>
-    <!-- Keep Type Values -->
-    <div class="logo">
-        <img src="/static/Ask-A-Nole-Logo.png" />
-    </div>
-
-    <form action="{{url_for('signupvalid')}}" method="POST">
-
-        <div class="signup-box">
-
-            <!-- SignUp Input Group -->
-            <div class="input-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="First" placeholder="First" />
-            </div>
-
-            <div class="input-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="Last" placeholder="Last" />
-            </div>
-
-            <div class="input-group">
-                <label for="fsuid">FSU ID:</label>
-                <input type="text" id="fsuid" name="Fsuid" placeholder="FSU ID" />
-            </div>
-
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="Password" placeholder="Password" />
-            </div>
-
-            <div class="input-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="ConfirmPassword" placeholder="Confirm Password" />
-            </div>
-
-            <!-- SignUp Button -->
-            <button class="signup-btn" type="submit" value="Submit">Sign Up</button>
+    <body>
+        <!-- Keep Type Values -->
+        <div class="logo">
+            <img src="/static/Ask-A-Nole-Logo.png" />
         </div>
 
-    </form>
-    <div class="login-box">
-        <!-- Login Option -->
-        <p>Already have an account?</p>
-        <a href="/"><button class="login-btn">Login</button></a>
-    </div>
-</body>
+        <form action="{{url_for('signupvalid')}}" method="POST">
+
+            <div class="signup-box">
+
+                <!-- SignUp Input Group -->
+                <div class="input-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="First" placeholder="First" />
+                </div>
+
+                <div class="input-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="Last" placeholder="Last" />
+                </div>
+
+                <div class="input-group">
+                    <label for="fsuid">FSU ID:</label>
+                    <input type="text" id="fsuid" name="Fsuid" placeholder="FSU ID" />
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="Password" placeholder="Password" />
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="ConfirmPassword" placeholder="Confirm Password" />
+                </div>
+
+                <!-- SignUp Button -->
+                <button class="signup-btn" type="submit" value="Submit">Sign Up</button>
+            </div>
+
+        </form>
+        <div class="login-box">
+            <!-- Login Option -->
+            <p>Already have an account?</p>
+            <a href="/"><button class="login-btn">Login</button></a>
+        </div>
+    </body>
 
 </html>
