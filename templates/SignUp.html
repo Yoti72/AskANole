@@ -14,22 +14,23 @@
 
 <body>
     <!-- Keep Type Values -->
+    <div class="logo">
+        <img src="/static/Ask-A-Nole-Logo.png" />
+    </div>
+
     <form action="{{url_for('signupvalid')}}" method="POST">
 
-        <div class="logo">
-            <img src="/static/Ask-A-Nole-Logo.png" />
-        </div>
+        <div class="signup-box">
 
-        <div class="signup-container">
-            <!-- Login Input Group -->
+            <!-- SignUp Input Group -->
             <div class="input-group">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="First" placeholder="First Name" />
+                <input type="text" id="firstName" name="First" placeholder="First" />
             </div>
 
             <div class="input-group">
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="Last" placeholder="Last Name" />
+                <input type="text" id="lastName" name="Last" placeholder="Last" />
             </div>
 
             <div class="input-group">
@@ -48,14 +49,14 @@
             </div>
 
             <!-- SignUp Button -->
-            <button class="signup-button" type="submit" value="Submit">Sign Up</button>
+            <button class="signup-btn" type="submit" value="Submit">Sign Up</button>
         </div>
 
     </form>
-    <div class="login-container">
+    <div class="login-box">
         <!-- Login Option -->
         <p>Already have an account?</p>
-        <a href="/"><button class="login-button">Login</button></a>
+        <a href="/"><button class="login-btn">Login</button></a>
     </div>
 </body>
 
