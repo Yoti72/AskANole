@@ -20,9 +20,6 @@ body {
 
 /* ===================== Logo ===================== */
 .logo {
-    background-color: #CEB888;
-    box-shadow: #240108 0px 0px 10px 0px;
-    border: 3px solid #782F40;
     text-align: center;
     margin: 20px 20px 20px 20px;
     padding-top: 3px;
@@ -34,19 +31,18 @@ body {
 }
 
 /* ===================== signup Box ===================== */
-.signup-box {
-
+.signup-container {
     max-width: 500px;
-    margin: 80px auto;
-    margin-top: 80px;
-    background-color: #FFFFFF;
-    /* White container background */
     padding: 20px;
     border-style: inset;
     border-color: #CEB888;
     border-width: 3px;
     border-radius: 8px;
-    box-shadow: #240108 0px 0px 7px 0px;
+    margin: 80px auto;
+    margin-bottom: 40px;
+    background-color: #FFFFFF;
+    /* White container background */
+    box-shadow: #240108 2px 3px 7px 2px;
 }
 
 /* ===================== signup Form ===================== */
@@ -57,6 +53,7 @@ body {
 .input-group label {
     display: block;
     font-weight: bold;
+    font-size: 15px;
     margin-bottom: 5px;
 }
 
@@ -69,19 +66,20 @@ body {
 }
 
 .signup-btn {
+    min-width: 90%;
     /* Garnet color */
     background-color: #782F40;
     /* Gold color */
     color: #CEB888;
-    padding: 10px 15px;
+    padding: 9px;
     border-style: inset;
     border-color: #CEB888;
     border-width: 2px;
     border-radius: 5px;
+    margin-left: 25px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    width: 100%;
 }
 
 .signup-btn:hover {
@@ -89,20 +87,18 @@ body {
     /* Darker Garnet color on hover */
 }
 
-.login-box {
-    font-size: 14px;
+.login-container {
+    background-color: #FFFFFF;
     text-decoration: black;
     max-width: 220px;
-    max-height: 50px;
-    margin: 10px auto;
-
-    background-color: #FFFFFF;
+    max-height: auto;
     /* White container background */
-    padding: 1px 1px 45px 1px;
+    padding: 1px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 80px auto;
+    box-shadow: #240108 2px 3px 7px 2px;
+    font-size: 14px;
     text-align: center;
-    box-shadow: #240108 0px 0px 7px 0px;
 }
 
 .login-btn {
@@ -110,17 +106,15 @@ body {
     background-color: #782F40;
     /* Gold color */
     color: #CEB888;
-    margin: 1px auto;
-    padding: 6px;
+    padding: 6px 25px;
     border-style: inset;
     border-color: #CEB888;
     border-width: 2px;
     border-radius: 5px;
+    margin-bottom: 10px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
-    width: 50%;
-    align-content: center;
 }
 
 .login-btn:hover {
