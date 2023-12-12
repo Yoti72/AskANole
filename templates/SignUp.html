@@ -12,59 +12,58 @@
 
     </head>
 
-    <div class="outer-border">
-        <div class="mid-border">
-            <div class="inner-border">
+    <body>
+        <div class="outer-border">
+            <div class="mid-border">
+                <div class="inner-border">
 
-                <body>
                     <!-- Keep Type Values -->
                     <div class="logo"><img src="/static/Ask-A-Nole-Logo.png" />
                     </div>
-            </div>
-
-            <form action="{{url_for('signupvalid')}}" method="POST">
-
-                <div class="signup-container">
-
-                    <!-- SignUp Input Group -->
-                    <div class="input-group">
-                        <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="First" placeholder="First" />
-                    </div>
-
-                    <div class="input-group">
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="Last" placeholder="Last" />
-                    </div>
-
-                    <div class="input-group">
-                        <label for="fsuid">FSU ID:</label>
-                        <input type="text" id="fsuid" name="Fsuid" placeholder="FSU ID" />
-                    </div>
-
-                    <div class="input-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="Password" placeholder="Password" />
-                    </div>
-
-                    <div class="input-group">
-                        <label for="confirmPassword">Confirm Password:</label>
-                        <input type="password" id="confirmPassword" name="ConfirmPassword"
-                            placeholder="Confirm Password" />
-                    </div>
-
-                    <!-- SignUp Button -->
-                    <button class="signup-btn" type="submit" value="Submit">Sign Up</button>
                 </div>
 
-            </form>
-            <div class="login-container">
-                <!-- Login Option -->
-                <p>Already have an account?</p>
-                <a href="/"><button class="login-btn">Login</button></a>
+                <form action="{{url_for('signupvalid')}}" method="POST">
+
+                    <div class="signup-container">
+                        <!-- SignUp Input Group -->
+                        <div class="input-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="First" placeholder="First" />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="Last" placeholder="Last" />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="fsuid">FSU ID:</label>
+                            <input type="text" id="fsuid" name="Fsuid" placeholder="FSU ID" />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="Password" placeholder="Password" />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" id="confirmPassword" name="ConfirmPassword"
+                                placeholder="Confirm Password" />
+                        </div>
+
+                        <!-- SignUp Button -->
+                        <button class="signup-btn" type="submit" value="Submit">Sign Up</button>
+                    </div>
+
+                </form>
+                <div class="login-container">
+                    <!-- Login Option -->
+                    <p>Already have an account?</p>
+                    <a href="/"><button class="login-btn">Login</button></a>
+                </div>
             </div>
-            </body>
         </div>
-    </div>
+    </body>
 
 </html>

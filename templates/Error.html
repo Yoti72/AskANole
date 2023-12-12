@@ -6,14 +6,111 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Error</title>
+        <meta name="viewport" content="width=1, initial-scale=1.0">
+        <title>Page not found</title>
+        <link rel="stylesheet" href="/static/ErrorIVstyle.css">
     </head>
 
+
     <body>
-        <h1>Something went wrong<br></h1>
-
-        <a href="/"><button>Return to Login</button></a>
-
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css">
+        <svg>
+            <defs>
+                <filter id="screen-glitch" x="-50%" y="-50%" width="200%" height="200%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0 0.01" result="noise" numOctaves="2" />
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="200" />
+                </filter>
+            </defs>
+        </svg>
+        <input type="checkbox" id="dark-mode">
+        <div class="container">
+            <label for="dark-mode">
+                <div class="dark-mode-button_sun"></div>
+                <div class="dark-mode-button_moon"></div>
+            </label>
+            <header data-content="Loading Data">Something went wrong</header>
+            <div class="random-letters">
+                <div class="random-letters_letter">
+                    <p>G</p>
+                    <p>3</p>
+                    <p>[</p>
+                    <p>6</p>
+                    <p>E</p>
+                    <p>!</p>
+                    <p>G</p>
+                    <p>T</p>
+                    <p>1</p>
+                    <p>J</p>
+                </div>
+                <div class="random-letters_letter">
+                    <p>L</p>
+                    <p>M</p>
+                    <p>U</p>
+                    <p>{</p>
+                    <p>}</p>
+                    <p>F</p>
+                    <p>-</p>
+                    <p>H</p>
+                    <p>*</p>
+                    <p>9</p>
+                </div>
+                <div class="random-letters_letter">
+                    <p>I</p>
+                    <p>+</p>
+                    <p>W</p>
+                    <p>]</p>
+                    <p>=</p>
+                    <p>L</p>
+                    <p>?</p>
+                    <p>5</p>
+                    <p>V</p>
+                    <p>1</p>
+                </div>
+                <div class="random-letters_letter">
+                    <p>T</p>
+                    <p>D</p>
+                    <p>7</p>
+                    <p>$</p>
+                    <p>S</p>
+                    <p>~</p>
+                    <p>C</p>
+                    <p>%</p>
+                    <p>"</p>
+                    <p>5</p>
+                </div>
+                <div class="random-letters_letter">
+                    <p>C</p>
+                    <p>M</p>
+                    <p>U</p>
+                    <p>{</p>
+                    <p>}</p>
+                    <p>F</p>
+                    <p>-</p>
+                    <p>H</p>
+                    <p>*</p>
+                    <p>9</p>
+                </div>
+                <div class="random-letters_letter">
+                    <p>H</p>
+                    <p>+</p>
+                    <p>W</p>
+                    <p>]</p>
+                    <p>=</p>
+                    <p>L</p>
+                    <p>?</p>
+                    <p>5</p>
+                    <p>V</p>
+                    <p>1</p>
+                </div>
+                <p>...
+                <div class="cursor">|</div>
+                </p>
+            </div>
+            <div class="loading-bar"></div>
+        </div>
+        <footer>
+            <a href="/"><button class="return-btn">Return to Login</button></a>
+        </footer>
     </body>
 
 </html>
