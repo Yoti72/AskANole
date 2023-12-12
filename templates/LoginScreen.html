@@ -9,45 +9,45 @@
         <title>Ask-A-Nole Login</title>
         <link rel="stylesheet" href="/static/LoginIVstyle.css" />
     </head>
+    <div class="outer-border">
+        <div class="mid-border">
+            <div class="inner-border">
 
     <body>
 
         <!-- Logo Place Holder -->
-        <div class="outer-border">
-            <div class="mid-border">
-                <div class="inner-border">
-                    <div class="logo"><img src="/static/Ask-A-Nole-Logo.png"/>
+                    <div class="logo"><img src="/static/Ask-A-Nole-Logo.png" />
                     </div>
                 </div>
 
 
-            <form action="{{url_for('welcome')}}" method="POST">
+                <form action="{{url_for('welcome')}}" method="POST">
 
-                <div class="login-container">
-                    <!-- Login Input Group -->
-                    <div class="input-group">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="FSUID" placeholder="FSU ID" />
+                    <div class="login-container">
+                        <!-- Login Input Group -->
+                        <div class="input-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="FSUID" placeholder="FSU ID" />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="Password" placeholder="Password" />
+                        </div>
+
+                        <!-- Login Button -->
+                        <button class="login-btn" type="submit" value="Login">Login</button>
                     </div>
 
-                    <div class="input-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="Password" placeholder="Password" />
-                    </div>
+                </form>
 
-                    <!-- Login Button -->
-                    <button class="login-btn" type="submit" value="Login">Login</button>
+                <!-- Sign Up Option -->
+                <div class="signup-container">
+                    <p>Don't have an account?</p>
+                    <a href="/signup"><button class="signup-btn">Sign Up</button></a>
                 </div>
-
-            </form>
-
-            <!-- Sign Up Option -->
-            <div class="signup-container">
-                <p>Don't have an account?</p>
-                <a href="/signup"><button class="signup-btn">Sign Up</button></a>
-            </div>
-        </body>
+    </body>
     </div>
-</div>
+    </div>
 
 </html>

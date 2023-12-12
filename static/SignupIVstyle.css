@@ -30,6 +30,7 @@ body {
     min-height: 100%;
     min-width: 96%;
     padding: 6px;
+    padding-right: 10px;
     margin: auto;
 }
 
@@ -62,8 +63,7 @@ body {
     border-color: #CEB888;
     border-width: 3px;
     border-radius: 8px;
-    margin: 100px auto;
-    margin-bottom: 110px;
+    margin: 60px auto;
     background-color: #FFFFFF;
     /* White container background */
     box-shadow: #240108 2px 3px 7px 2px;
@@ -119,8 +119,8 @@ body {
     /* White container background */
     padding: 1px;
     border-radius: 8px;
-    margin: 100px auto;
-    margin-bottom: calc(70vh - 500px);
+    margin: 70px auto;
+    margin-bottom: 55px;
     box-shadow: #240108 2px 3px 7px 2px;
     font-size: 14px;
     text-align: center;

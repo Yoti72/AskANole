@@ -28,6 +28,7 @@ body {
     min-height: 100%;
     min-width: 96%;
     padding: 6px;
+    padding-right: 10px;
     margin: auto;
 }
 
