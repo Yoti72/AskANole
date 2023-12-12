@@ -15,33 +15,27 @@ body {
     /* Light gray background */
 }
 
-.outer-border {
-    border: 2px solid #CEB888;
-    min-height: auto;
-    min-width: 90%;
-    padding: 10px;
-    margin: 5px;
-}
+/* ===================== Login Box ===================== */
+.login-container {
 
-.mid-border {
-    border: 6px solid #CEB888;
-    min-height: 100%;
-    min-width: 96%;
-    padding: 6px;
-    padding-right: 10px;
-    margin: auto;
-}
-
-.inner-border {
-    position: relative;
-    border: 2px solid #CEB888;
-    min-height: 100%;
-    min-width: 100%;
-    margin: auto;
+    max-width: 500px;
+    margin: 80px auto;
+    margin-top: 80px;
+    background-color: #FFFFFF;
+    /* White container background */
+    padding: 20px;
+    border-style: inset;
+    border-color: #CEB888;
+    border-width: 3px;
+    border-radius: 8px;
+    box-shadow: #240108 0px 0px 7px 0px;
 }
 
 /* ===================== Logo ===================== */
 .logo {
+    background-color: #CEB888;
+    box-shadow: #240108 0px 0px 10px 0px;
+    border: 3px solid #782F40;
     text-align: center;
     margin: 20px 20px 20px 20px;
     padding-top: 3px;
@@ -52,21 +46,6 @@ body {
     height: 140px;
 }
 
-/* ===================== Login Box ===================== */
-.login-container {
-    max-width: 500px;
-    padding: 20px;
-    border-style: inset;
-    border-color: #CEB888;
-    border-width: 3px;
-    border-radius: 8px;
-    margin: 100px auto;
-    margin-bottom: 110px;
-    background-color: #FFFFFF;
-    /* White container background */
-    box-shadow: #240108 2px 3px 7px 2px;
-}
-
 /* ===================== Login Form ===================== */
 .input-group {
     margin-bottom: 20px;
@@ -75,7 +54,6 @@ body {
 .input-group label {
     display: block;
     font-weight: bold;
-    font-size: 15px;
     margin-bottom: 5px;
 }
 
@@ -87,60 +65,62 @@ body {
     border-radius: 4px;
 }
 
-.login-btn {
-    min-width: 90%;
+.login-button {
     /* Garnet color */
     background-color: #782F40;
     /* Gold color */
     color: #CEB888;
-    padding: 9px;
+    padding: 10px 15px;
     border-style: inset;
     border-color: #CEB888;
     border-width: 2px;
     border-radius: 5px;
-    margin-left: 25px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
+    width: 100%;
 }
 
-.login-btn:hover {
+.login-button:hover {
     background-color: #5E1E2A;
     /* Darker Garnet color on hover */
 }
 
 .signup-container {
-    background-color: #FFFFFF;
+    font-size: 14px;
     text-decoration: black;
     max-width: 220px;
-    max-height: auto;
+    max-height: 50px;
+    margin: 10px auto;
+
+    background-color: #FFFFFF;
     /* White container background */
-    padding: 1px;
+    padding: 1px 1px 45px 1px;
     border-radius: 8px;
-    margin: 100px auto;
-    margin-bottom: calc(70vh - 500px);
-    box-shadow: #240108 2px 3px 7px 2px;
-    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-shadow: #240108 0px 0px 7px 0px;
 }
 
-.signup-btn {
+.signup-button {
     /* Garnet color */
     background-color: #782F40;
     /* Gold color */
     color: #CEB888;
-    padding: 6px 25px;
+    margin: 1px auto;
+    padding: 6px;
     border-style: inset;
     border-color: #CEB888;
     border-width: 2px;
     border-radius: 5px;
-    margin-bottom: 10px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
+    width: 50%;
+    align-content: center;
 }
 
-.signup-btn:hover {
+.signup-button:hover {
     background-color: #5E1E2A;
     /* Darker Garnet color on hover */
 }
