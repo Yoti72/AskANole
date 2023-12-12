@@ -6,6 +6,8 @@
     #000000 for Black
 */
 
+
+
 /* ===================== Website Body ===================== */
 body {
     margin: 0;
@@ -15,8 +17,24 @@ body {
     /* Light gray background */
 }
 
+
+/* ===================== Logo ===================== */
+.logo {
+    background-color: #CEB888;
+    box-shadow: #240108 0px 0px 10px 0px;
+    border: 3px solid #782F40;
+    text-align: center;
+    margin: 20px 20px 20px 20px;
+    padding-top: 3px;
+}
+
+.logo img {
+    width: 350px;
+    height: 140px;
+}
+
 /* ===================== signup Box ===================== */
-.signup-container {
+.signup-box {
 
     max-width: 500px;
     margin: 80px auto;
@@ -29,22 +47,6 @@ body {
     border-width: 3px;
     border-radius: 8px;
     box-shadow: #240108 0px 0px 7px 0px;
-}
-
-/* ===================== Logo ===================== */
-.logo {
-    background-color: #CEB888;
-    box-shadow: #240108 0px 0px 10px 0px;
-    background-position-y: center;
-    border: 3px solid #782F40;
-    text-align: center;
-    margin: 25px;
-}
-
-.logo img {
-    width: 350px;
-    /* Adjust the width as needed */
-    height: 140px;
 }
 
 /* ===================== signup Form ===================== */
@@ -66,7 +68,7 @@ body {
     border-radius: 4px;
 }
 
-.signup-button {
+.signup-btn {
     /* Garnet color */
     background-color: #782F40;
     /* Gold color */
@@ -82,12 +84,12 @@ body {
     width: 100%;
 }
 
-.signup-button:hover {
+.signup-btn:hover {
     background-color: #5E1E2A;
     /* Darker Garnet color on hover */
 }
 
-.login-container {
+.login-box {
     font-size: 14px;
     text-decoration: black;
     max-width: 220px;
@@ -103,7 +105,7 @@ body {
     box-shadow: #240108 0px 0px 7px 0px;
 }
 
-.login-button {
+.login-btn {
     /* Garnet color */
     background-color: #782F40;
     /* Gold color */
@@ -121,7 +123,7 @@ body {
     align-content: center;
 }
 
-.login-button:hover {
+.login-btn:hover {
     background-color: #5E1E2A;
     /* Darker Garnet color on hover */
 }

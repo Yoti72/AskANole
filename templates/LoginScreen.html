@@ -12,13 +12,14 @@
 </head>
 
 <body>
+  
   <form action="{{url_for('welcome')}}" method="POST">
     <!-- Logo Place Holder -->
     <div class="logo">
       <img src="/static/Ask-A-Nole-Logo.png" />
     </div>
 
-    <div class="login-container">
+    <div class="login-box">
       <!-- Login Input Group -->
       <div class="input-group">
         <label for="username">Username:</label>
@@ -31,15 +32,15 @@
       </div>
 
       <!-- Login Button -->
-      <button class="login-button" type="submit" value="Login">Login</button>
+      <button class="login-btn" type="submit" value="Login">Login</button>
     </div>
 
   </form>
 
-  <div class="signup-container">
+  <div class="signup-box">
     <!-- Sign Up Option -->
     <p>Don't have an account?</p>
-    <a href="/signup"><button class="signup-button">Sign Up</button></a>
+    <a href="/signup"><button class="signup-btn">Sign Up</button></a>
   </div>
 
 </body>

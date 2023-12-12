@@ -21,7 +21,7 @@
             padding: 5px;
             text-align: left;
         }
-        
+
         h3 {
             color: #CEB888;
             font-family: "Roboto";
@@ -85,12 +85,12 @@
 </head>
 <body>
 
-        <div class = "addpost-container"> 
+        <div class = "addpost-container">
             <header class="header">
                 <h3>Florida State University</h3>
             </header>
             <div class = "header-lower">
-                <img src='../statics/Assest/FSU_Logo.jpg' alt="Logo" class="logo">
+                <img src='/static/FSU_Logo.jpg' alt="Logo" class="logo">
                 <h1>Add Post</h1>
             <div>
         <div>
@@ -102,7 +102,7 @@
             <h2>Enter your Title and Description</h2>
         </div>
         <form action="{{url_for('added')}}" method="POST">
-            <input type="text" name="Title" placeholder="Title"> 
+            <input type="text" name="Title" placeholder="Title">
             <textarea name="Description" placeholder="Description" rows="4"></textarea>
             <input type="submit" value="Post">
         </form>
