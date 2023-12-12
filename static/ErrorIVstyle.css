@@ -1,7 +1,8 @@
+/*  */
 body {
 	margin: 0;
 	padding: 0;
-	background: #000;
+	background: #782F40;
 	font-family: sans-serif;
 	text-align: center;
 	overflow-x: hidden
@@ -125,4 +126,25 @@ p:nth-child(3) {
 		transform: translate(0, 0);
 		clip-path: polygon(11% 23%, 22% 50%, 10% 30%, 10% 3%);
 	}
+}
+
+.return-btn {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-decoration: dashed;
+	color: #782F40;
+	font-size: 2em;
+	border: 2px solid #CEB888;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: 0.5s;
+	background-color: #CEB888;
+	cursor: pointer;
+}
+
+.return-btn:hover {
+	background-color: #782F40;
+	color: #CEB888;
 }
