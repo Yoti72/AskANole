@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect
+import hashlib
 app = Flask(__name__)
 import sqlite3
 
 user = ['']
-
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
@@ -27,10 +27,12 @@ def signupvalid():
             confirm_pass = request.form['ConfirmPassword']
             user[0] = fsuid
 
+            hashed_password = hashlib.sha1(password.encode()).hexdigest()
+
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
                 if(password == confirm_pass):
-                    cur.execute("INSERT INTO Login (FSUID, Password,First,Last) VALUES (?,?,?,?)", (fsuid, password, first, last))
+                    cur.execute("INSERT INTO Login (FSUID, Password, First, Last) VALUES (?,?,?,?)", (fsuid, hashed_password, first, last))
             return redirect("/")
         except:
             con.rollback()
@@ -46,9 +48,11 @@ def welcome():
             fsuid = request.form['FSUID']
             password = request.form['Password']
 
+            hashed_password = hashlib.sha1(password.encode()).hexdigest()
+
             cursor = conn.cursor()
 
-            cursor.execute("SELECT * FROM Login WHERE FSUID = ? AND Password = ?", (fsuid,password))
+            cursor.execute("SELECT * FROM Login WHERE FSUID = ? AND Password = ?", (fsuid,hashed_password))
             rows = cursor.fetchall()
             if len(rows) == 0:
                 return render_template("NoMatchingUser.html")
