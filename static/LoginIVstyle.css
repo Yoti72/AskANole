@@ -1,9 +1,9 @@
 /*
-    FSU Color Scheme:
-    #782F40 for Garnet
-    #CEB888 for Gold
-    #FFFFFF for White
-    #000000 for Black
+    * Author:           IskaIV
+    *
+    * LoginIVstyle.css
+    * ------------------------
+    * Style sheet for Login.html
 */
 
 /* ===================== Website Body ===================== */
@@ -15,6 +15,7 @@ body {
     /* Light gray background */
 }
 
+/* ===================== Outer Border ===================== */
 .outer-border {
     border: 2px solid #CEB888;
     min-height: auto;
@@ -23,6 +24,7 @@ body {
     margin: 5px;
 }
 
+/* ===================== Middle Border ===================== */
 .mid-border {
     border: 6px solid #CEB888;
     min-height: 100%;
@@ -32,6 +34,7 @@ body {
     margin: auto;
 }
 
+/* ===================== Inner Border ===================== */
 .inner-border {
     position: relative;
     border: 2px solid #CEB888;
@@ -87,6 +90,7 @@ body {
     border-radius: 4px;
 }
 
+/* ===================== Login Button ===================== */
 .login-btn {
     min-width: 90%;
     /* Garnet color */
@@ -109,6 +113,7 @@ body {
     /* Darker Garnet color on hover */
 }
 
+/* ===================== SignUp Box ===================== */
 .signup-container {
     background-color: #FFFFFF;
     text-decoration: black;
@@ -124,6 +129,7 @@ body {
     text-align: center;
 }
 
+/* ===================== SignUp Button ===================== */
 .signup-btn {
     /* Garnet color */
     background-color: #782F40;

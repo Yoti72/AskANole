@@ -1,9 +1,9 @@
 /*
-    FSU Color Scheme:
-    #782F40 for Garnet
-    #CEB888 for Gold
-    #FFFFFF for White
-    #000000 for Black
+    * Author:           IskaIV
+    *
+    * SignupIVstyle.css
+    * ------------------------
+    * Style sheet for Signup.html
 */
 
 
@@ -11,12 +11,16 @@
 /* ===================== Website Body ===================== */
 body {
     margin: 0;
+    /* Remove default margin */
     padding: 0;
+    /* Remove default padding */
     font-family: Arial, sans-serif;
+    /* Set default font */
     background-color: #782F40;
-    /* Light gray background */
+    /* Set background color */
 }
 
+/* ===================== Outer Border ===================== */
 .outer-border {
     border: 2px solid #CEB888;
     min-height: auto;
@@ -25,6 +29,7 @@ body {
     margin: 5px;
 }
 
+/* ===================== Middle Border ===================== */
 .mid-border {
     border: 6px solid #CEB888;
     min-height: 100%;
@@ -34,6 +39,7 @@ body {
     margin: auto;
 }
 
+/* ===================== Inner Border ===================== */
 .inner-border {
     position: relative;
     border: 2px solid #CEB888;
@@ -55,7 +61,7 @@ body {
     height: 140px;
 }
 
-/* ===================== signup Box ===================== */
+/* ===================== SignUp Box ===================== */
 .signup-container {
     max-width: 500px;
     padding: 20px;
@@ -69,7 +75,7 @@ body {
     box-shadow: #240108 2px 3px 7px 2px;
 }
 
-/* ===================== signup Form ===================== */
+/* ===================== SignUp Form ===================== */
 .input-group {
     margin-bottom: 20px;
 }
@@ -89,6 +95,7 @@ body {
     border-radius: 4px;
 }
 
+/* ===================== SignUp Button ===================== */
 .signup-btn {
     min-width: 90%;
     /* Garnet color */
@@ -111,6 +118,7 @@ body {
     /* Darker Garnet color on hover */
 }
 
+/* ===================== Login Box ===================== */
 .login-container {
     background-color: #FFFFFF;
     text-decoration: black;
@@ -126,6 +134,7 @@ body {
     text-align: center;
 }
 
+/* ===================== Login Button ===================== */
 .login-btn {
     /* Garnet color */
     background-color: #782F40;
