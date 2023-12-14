@@ -11,10 +11,13 @@
 /* ===================== Website Body ===================== */
 body {
     margin: 0;
+    /* Remove default margin */
     padding: 0;
+    /* Remove default padding */
     font-family: Arial, sans-serif;
+    /* Set default font */
     background-color: #782F40;
-    /* Light gray background */
+    /* Set background color */
 }
 
 .outer-border {
@@ -54,5 +57,3 @@ body {
     width: 350px;
     height: 140px;
 }
-
-
