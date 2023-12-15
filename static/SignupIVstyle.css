@@ -49,11 +49,9 @@ body {
 }
 
 
-/* ===================== Logo ===================== */
 .logo {
     text-align: center;
-    margin: 20px 20px 20px 20px;
-    padding-top: 3px;
+    margin: 10px;
 }
 
 .logo img {
@@ -97,26 +95,22 @@ body {
 
 /* ===================== SignUp Button ===================== */
 .signup-btn {
-    min-width: 90%;
-    /* Garnet color */
-    background-color: #782F40;
-    /* Gold color */
     color: #CEB888;
-    padding: 9px;
+    background-color: #782F40;
     border-style: inset;
     border-color: #CEB888;
     border-width: 2px;
     border-radius: 5px;
-    margin-left: 25px;
+    padding: 9px;
     cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
+    margin-left: 60px;
+    min-width: 76%;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.2s ease-in-out;
 }
 
-.signup-btn:hover {
-    background-color: #5E1E2A;
-    /* Darker Garnet color on hover */
-}
+
 
 /* ===================== Login Box ===================== */
 .login-container {
@@ -136,9 +130,7 @@ body {
 
 /* ===================== Login Button ===================== */
 .login-btn {
-    /* Garnet color */
     background-color: #782F40;
-    /* Gold color */
     color: #CEB888;
     padding: 6px 25px;
     border-style: inset;
@@ -149,9 +141,11 @@ body {
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
+    transition: all 0.2s ease-in-out;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.signup-btn:hover {
     background-color: #5E1E2A;
-    /* Darker Garnet color on hover */
+    transform: scale(1.05);
 }

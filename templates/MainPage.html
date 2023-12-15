@@ -14,45 +14,37 @@
     </head>
 
     <body>
-        <!-- ADD BORDER -->
-        <!-- <div class="outer-border">
-			<div class="mid-border">
-				<div class="inner-border">
-					Logo Place Holder
-					<div class="logo"><img src="/static/Ask-A-Nole-Logo.png" /></div>
-				</div>
-			</div> -->
+        <div class="outer-border">
+            <div class="mid-border">
+                <div class="inner-border">
+                    <div class="logo"><img src="/static/Ask-A-Nole-Logo.png" /></div>
+                </div>
 
-        <!-- Header -->
-        <div class="header">
-            <h1>Ask-a-Nole</h1>
-            <!-- User Actions -->
-            <div class="user-actions">
-                <a href="/addpost"><button type="button">Add Post</button></a>
-                <a href="/messages"><button type="button">Messages</button></a>
-                <a href="/"><button type="button">Sign Out</button></a>
+                <div class="header">
+                    <div class="user-actions">
+                        <a href="/addpost"><button type="button">Add Post</button></a>
+                        <a href="/messages"><button type="button">Messages</button></a>
+                        <a href="/"><button type="button">Sign Out</button></a>
+                    </div>
+                </div>
+
+                <div class="posts">
+                    <div class="search-bar">
+                        <form method="POST" action="/search">
+                            <input type="text" placeholder="Search..." name="searched">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    {% for post in posts %}
+                    <div class="post">
+                        <h2><a href="{{ url_for('post_detail', post_id=post[0]) }}">{{ post[2] }}</a></h2>
+                        <p>{{ post.content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-
-        <!-- Posts -->
-        <div class="posts">
-            <!-- Search Bar -->
-            <div class="search-bar">
-                <form method="POST" action="/search">
-                    <input type="text" placeholder="Search..." name="searched">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-            <!-- Post -->
-            {% for post in posts %}
-            <div class="post">
-                <h2><a href="{{ url_for('post_detail', post_id=post[0]) }}">{{ post[2] }}</a></h2>
-                <p>{{ post.content }}</p>
-            </div>
-            {% endfor %}
-        </div>
-
-
     </body>
 
 </html>
