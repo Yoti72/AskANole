@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect, make_response
 import hashlib
 import logging
-from check import generate_token
+from Setup import start_db
+from check import generate_token, check_token
 app = Flask(__name__)
 import sqlite3
 
@@ -56,21 +57,28 @@ def welcome():
 
             cursor = conn.cursor()
 
+            logging.debug("Inside try block, before bullshit")
+
             cursor.execute("SELECT * FROM Login WHERE FSUID = ? AND Password = ?", (fsuid,hashed_password))
             rows = cursor.fetchall()
+            logging.debug("WHERE IS THE BUGGGG")
             if len(rows) == 0:
                 return render_template("NoMatchingUser.html")
 
-            token = generate_token()
+            token = generate_token(fsuid)
             user[0] = rows[0][0]
             logging.debug(f"User is now {user[0]}")
 
-            response = make_response(render_template('/main'))
+            response = make_response(redirect('/main'))
             response.set_cookie('auth_token', token)
 
             logging.debug(f"About to send to main, current token is {token}")
             return response
+        except sqlite3.Error as e:
+            logging.error(f"Database error: {e}")
+            return render_template('Error.html')
         except:
+            logging.debug("returned to main site. why?")
             return redirect("/")
         finally:
             conn.close()
@@ -240,4 +248,5 @@ def comment():
 
 
 if __name__ == "__main__":
+    start_db()
     app.run(debug=True)
