@@ -1,8 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, make_response
 import hashlib
+import logging
+from check import generate_token
 app = Flask(__name__)
 import sqlite3
 
+logging.basicConfig(level=logging.DEBUG)
 user = ['']
 
 @app.route('/', methods = ['POST', 'GET'])
@@ -44,6 +47,7 @@ def signupvalid():
 def welcome():
     if request.method == "POST":
         conn = sqlite3.connect('database.db')
+        logging.debug("outside try block in /weclome route")
         try:
             fsuid = request.form['FSUID']
             password = request.form['Password']
@@ -56,8 +60,16 @@ def welcome():
             rows = cursor.fetchall()
             if len(rows) == 0:
                 return render_template("NoMatchingUser.html")
+
+            token = generate_token()
             user[0] = rows[0][0]
-            return redirect('/main')
+            logging.debug(f"User is now {user[0]}")
+
+            response = make_response(render_template('/main'))
+            response.set_cookie('auth_token', token)
+
+            logging.debug(f"About to send to main, current token is {token}")
+            return response
         except:
             return redirect("/")
         finally:
@@ -65,16 +77,28 @@ def welcome():
 
 @app.route('/main', methods = ['POST', 'GET'])
 def main():
-    conn = sqlite3.connect('database.db')
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM Posts ORDER BY Id DESC")
-    posts = cur.fetchall()
+    session_token = request.cookies.get('auth_token')
 
-    return render_template('MainPage.html', posts=posts)
+    if session_token:
+        conn = sqlite3.connect('database.db')
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM Posts ORDER BY Id DESC")
+        posts = cur.fetchall()
+
+        response = make_response(render_template('MainPage.html', posts=posts))
+        response.set_cookie('auth_token', token)
+        return response
+    else:
+        return render_template('TokenError.html')
 
 @app.route('/addpost', methods = ['POST', 'GET'])
 def addpost():
-    return render_template("AddPost.html")
+    session_token = request.cookies.get('auth_token')
+
+    if session_token:
+        return render_template("AddPost.html")
+    else:
+        return render_template('TokenError.html')
 
 @app.route('/added', methods = ['POST', 'GET'])
 def added():
