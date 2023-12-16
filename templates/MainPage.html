@@ -30,8 +30,8 @@
 
                 <div class="search-bar">
                     <form method="POST" action="/search">
-                        <input type="text" placeholder="Search..." name="searched">
-                        <button type="submit">Search</button>
+                        <input class="search-bar-txt" type="text" name="" placeholder="Search..." name="searched">
+                        <button class="search-bar-btn" type="submit">Search</button>
                     </form>
                 </div>
 
@@ -43,15 +43,11 @@
                         {% for post in posts %}
                         <div class="post__content">
                             <div class="post__top">
-                                <a class="post__profile-name">{{ post[1] }}</a>
+                                <h1> {{ post[1] }}</h1>
                             </div>
                             <article class="post">
                                 <h2>{{ post[2] }}</a></h2>
-
-
-
-
-                                {{ post[3] }}
+                                <h3>{{ post[3] }}</h3>
 
                                 <div class="goto-post">
                                     <a href="{{ url_for('post_detail', post_id=post[0]) }}">See More</a>

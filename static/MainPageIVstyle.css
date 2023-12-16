@@ -6,16 +6,40 @@
 	* Style sheet for MainPage.html
 */
 
+
+html,
 body {
-	margin: 10px;
+	height: max-content;
+	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
-	background: linear-gradient(#782F40, #6e031c);
+	background: linear-gradient(#782F40, #74172d, #782F40);
+}
+
+h1 {
+	color: #220707;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+h2 {
+	border: 2px solid #782F40;
+	padding: 5px;
+	font-size: 20px;
+}
+
+h3
+{
+	border: 2px solid #782F40;
+	font-weight: normal;
+	padding: 10px;
+	font-size: 18px;
 }
 
 .outer-border {
 	border: 2px solid #CEB888;
-	min-height: auto;
+	height: max-content;
 	min-width: 90%;
 	padding: 10px;
 	margin: 10px;
@@ -23,11 +47,11 @@ body {
 
 .mid-border {
 	border: 6px solid #CEB888;
-	min-height: 100%;
+	min-height: 100vh;
 	min-width: 96%;
 	padding: 6px;
 	padding-right: 10px;
-	margin: auto;
+
 }
 
 .inner-border {
@@ -49,14 +73,69 @@ body {
 	height: 60px;
 }
 
+search-bar {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2f3640;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+  }
+
+  .search-bar:hover > .search-bar-txt {
+	width: 240px;
+	padding: 0 6px;
+  }
+
+  .search-bar:hover > .search-bar-btn {
+	background: azure;
+	color: black;
+  }
+
+  .search-bar-btn {
+	color: #e84118;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+	cursor: pointer;
+  }
+
+  .search-bar-btn > i {
+	font-size-adjust: 30px;
+  }
+
+  .search-bar-txt {
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: azure;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	width: 0px;
+	font-weight: bold;
+  }
+
 .corners {
-	background: #cfc3c3;
-	height: 700px;
+	background: #978b8b;
+	height: max-content;
 	margin: 50px auto;
-	max-width: 700px;
+	width: 700px;
 	position: relative;
-	width: 80%;
+	min-height: 100vh;
 	box-shadow: 0 1px 7px hsla(0, 0%, 0%, 0.2);
+	background-attachment: fixed;
+	background-blend-mode: multiply;
 }
 
 .corners:after,
@@ -91,7 +170,6 @@ body {
 	width: 100%;
 	background-color: #fff;
 	margin: 13px;
-	;
 	margin-left: -16px;
 	min-height: 100px;
 	border: 3px solid #CEB888;
@@ -104,14 +182,6 @@ body {
 	align-items: center;
 	justify-content: space-between;
 }
-
-.post__profile-name {
-	color: #220707;
-	text-decoration: none;
-	font-size: 16px;
-	font-weight: bold;
-}
-
 
 /* Content */
 .post__content {
@@ -153,6 +223,3 @@ body {
 .footer-link:nth-child(3):hover {
 	color: #F44336;
 }
-
-
-
