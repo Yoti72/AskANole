@@ -18,6 +18,20 @@
             <div class="mid-border">
                 <div class="inner-border">
                     <div class="logo"><img src="/static/Ask-A-Nole-Logo-Compact.png" /></div>
+                    <div class="search-bar">
+                        <form method="POST" action="/search">
+                            <input class="search-bar-txt" type="text" placeholder="Search..." name="searched">
+                            <button class="search-bar-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-search">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg></button>
+                        </form>
+
+                    </div>
+
+
                 </div>
 
                 <div class="header">
@@ -26,13 +40,6 @@
                         <a href="/messages"><button type="button">Messages</button></a>
                         <a href="/"><button type="button">Sign Out</button></a>
                     </div>
-                </div>
-
-                <div class="search-bar">
-                    <form method="POST" action="/search">
-                        <input class="search-bar-txt" type="text" name="" placeholder="Search..." name="searched">
-                        <button class="search-bar-btn" type="submit">Search</button>
-                    </form>
                 </div>
 
                 <div class="corners">
