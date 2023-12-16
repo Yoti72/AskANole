@@ -17,9 +17,9 @@ This is a simple Flask-based web application that allows users to sign up, log i
 
 1. Clone the repository:
 
-   ```
+   bash
    git clone https://github.com/your-username/your-repo.git
-   ```
+   
 
 2. Change to the project directory:
 
