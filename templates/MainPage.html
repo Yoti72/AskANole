@@ -17,36 +17,29 @@
         <div class="outer-border">
             <div class="mid-border">
                 <div class="inner-border">
+
                     <div class="logo"><img src="/static/Ask-A-Nole-Logo-Compact.png" /></div>
                     <div class="search-bar">
                         <form method="POST" action="/search">
                             <input class="search-bar-txt" type="text" placeholder="Search..." name="searched">
-                            <button class="search-bar-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-search">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg></button>
+                            <button class="search-bar-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-search">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg></button>
                         </form>
-
                     </div>
 
+                    <a href="/addpost"><button class="add-btn" type="button">Add Post</button></a>
+                    <a href="/messages"><button class="msg-btn" type="button">Messages</button></a>
+                    <a href="/"><button class="signout-btn" type="button">Sign Out</button></a>
 
-                </div>
-
-                <div class="header">
-                    <div class="user-actions">
-                        <a href="/addpost"><button type="button">Add Post</button></a>
-                        <a href="/messages"><button type="button">Messages</button></a>
-                        <a href="/"><button type="button">Sign Out</button></a>
-                    </div>
                 </div>
 
                 <div class="corners">
                     <div class="feed">
-
-
-
                         {% for post in posts %}
                         <div class="post__content">
                             <div class="post__top">
@@ -55,25 +48,10 @@
                             <article class="post">
                                 <h2>{{ post[2] }}</a></h2>
                                 <h3>{{ post[3] }}</h3>
-
-                                <div class="goto-post">
-                                    <a href="{{ url_for('post_detail', post_id=post[0]) }}">See More</a>
-                                </div>
+                                <a href="{{ url_for('post_detail', post_id=post[0]) }}"><button class="seemore-btn">See More</button> </a>
                             </article>
                         </div>
                         {% endfor %}
-
-                        <div class="post__footer">
-                            <a href="#" class="footer-link">
-                                <i class="footer-icon fas fa-comments"></i>
-                            </a>
-                            <a href="#" class="footer-link">
-                                <i class="footer-icon fas fa-paw"></i>
-                            </a>
-                            <a href="#" class="footer-link">
-                                <i class="footer-icon fas fa-share-square"></i>
-                            </a>
-                        </div>
 
                     </div>
                 </div>

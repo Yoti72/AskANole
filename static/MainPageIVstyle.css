@@ -17,8 +17,9 @@ body {
 }
 
 h1 {
-	color: #220707;
-	text-decoration: none;
+	border: 2px solid #782F40;
+	padding: 5px;
+	background-color : #797b80;
 	font-size: 16px;
 	font-weight: bold;
 }
@@ -36,6 +37,11 @@ h3 {
 	font-size: 18px;
 }
 
+.p {
+	font-size: 16px;
+	color: #1d2129;
+}
+
 .outer-border {
 	border: 2px solid #CEB888;
 	height: max-content;
@@ -49,34 +55,33 @@ h3 {
 	min-height: 100vh;
 	min-width: 96%;
 	padding: 6px;
-	padding-right: 10px;
-
+	margin: auto;
 }
 
 .inner-border {
 	position: relative;
 	border: 2px solid #CEB888;
-	min-height: max-content;
-	min-width: 100%;
+	min-height: 100%;
+	padding: 10px;
 	margin: auto;
+	margin-bottom: 100px;
 }
 
 .logo {
 	text-align: center;
 	margin: 10px;
-	margin-left: 15px;
 }
 
 .logo img {
-	width: 60px;
-	height: 60px;
+	width: 70px;
+	height: 70px;
 }
 
 
 .search-bar {
-	top: 45px;
+	top: 20px;
 	right: 90px;
-	position: fixed;
+	position: absolute;
 	transform: translate(10%, 20%);
 	background: #2f3640;
 	border-radius: 40px;
@@ -124,6 +129,70 @@ h3 {
 	box-shadow: 0px 5px 20px 0px crimson;
 }
 
+.add-btn {
+	position: absolute;
+	top: 20px;
+	margin: 10px 10px;
+	width: 100px;
+	height: 50px;
+	background-color: #CEB888;
+	cursor: pointer;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+}
+
+.msg-btn {
+	position: absolute;
+	top: 20px;
+	left: 125px;
+	margin: 10px 10px;
+	width: 100px;
+	height: 50px;
+	background-color: #CEB888;
+	cursor: pointer;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+}
+
+.signout-btn {
+	position: absolute;
+	top: 20px;
+	left: 240px;
+	margin: 10px 10px;
+	width: 100px;
+	height: 50px;
+	background-color: #CEB888;
+	cursor: pointer;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+}
+
+.seemore-btn {
+	margin: 20px;
+	width: max-content;
+	height: 40px;
+	background-color: #CEB888;
+	cursor: pointer;
+	font-weight: normal;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+
+}
+
+.add-btn:hover,
+.msg-btn:hover,
+.signout-btn:hover {
+	background-color: #74172d;
+	box-shadow: 3px 3px 15px 0px rgba(82, 82, 82, 0.85);
+}
+
+
 .corners {
 	background: #978b8b;
 	height: max-content;
@@ -161,18 +230,18 @@ h3 {
 .feed {
 	margin: 0 auto;
 	width: 600px;
-	padding: 45px 0;
+	padding: 10px 0;
 }
 
 .post {
 	width: 100%;
+	height: max-content;
 	background-color: #fff;
-	margin: 13px;
-	margin-left: -16px;
-	min-height: 100px;
+	margin: 10px;
+	margin-left: -22px;
 	border: 3px solid #CEB888;
 	border-radius: 3px;
-	padding: 12px 15px;
+	padding: 10px;
 }
 
 .post__top {
@@ -186,38 +255,6 @@ h3 {
 	padding: 14px 8px;
 }
 
-.p {
-	font-size: 16px;
-	color: #1d2129;
-}
-
 .post__footer {
 	padding: 2px 10px;
-}
-
-.footer-link {
-	color: red;
-	margin: 0 30px 0 0;
-	text-decoration: none;
-	font-size: 14px;
-	color: #aaa;
-}
-
-.footer-link:hover {
-	color: #1da1f2;
-}
-
-.footer-icon {
-	fill: currentColor;
-	margin-right: 4px;
-	display: inline-block;
-	font-size: 24px;
-}
-
-.footer-link:nth-child(2):hover {
-	color: #17bf63;
-}
-
-.footer-link:nth-child(3):hover {
-	color: #F44336;
 }
