@@ -115,13 +115,13 @@ def added():
 
                 with sqlite3.connect('database.db') as con:
                     cur = con.cursor()
-                    cur.execute("INSERT INTO Posts (FSUID, Title,Description) VALUES (?,?,?)", (user[0], title, description))
+                    cur.execute("INSERT INTO Posts (FSUID, Title, Description) VALUES (?,?,?)", (user[0], title, description))
             except:
                 con.rollback()
                 return render_template('Error.html')
             finally:
                 con.close()
-            
+
             return redirect("/main")
         else:
             return render_template('TokenError.html')

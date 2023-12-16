@@ -7,10 +7,10 @@
 */
 
 body {
-	margin: 0;
+	margin: 10px;
 	padding: 0;
 	font-family: Arial, sans-serif;
-	background-color: #782F40;
+	background: linear-gradient(#782F40, #6e031c);
 }
 
 .outer-border {
@@ -18,7 +18,7 @@ body {
 	min-height: auto;
 	min-width: 90%;
 	padding: 10px;
-	margin: 5px;
+	margin: 10px;
 }
 
 .mid-border {
@@ -39,11 +39,120 @@ body {
 }
 
 .logo {
-	text-align: center;
+	text-align: left;
 	margin: 10px;
+	margin-left: 15px;
 }
 
 .logo img {
-	width: 350px;
-	height: 140px;
+	width: 60px;
+	height: 60px;
 }
+
+.corners {
+	background: #cfc3c3;
+	height: 700px;
+	margin: 50px auto;
+	max-width: 700px;
+	position: relative;
+	width: 80%;
+	box-shadow: 0 1px 7px hsla(0, 0%, 0%, 0.2);
+}
+
+.corners:after,
+.corners:before {
+	background: #782F40;
+	content: '';
+	height: 50px;
+	position: absolute;
+	top: -25px;
+	width: 100px;
+	box-shadow: 0 5px 10px -7px hsla(0, 0%, 0%, 0.5);
+}
+
+.corners:after {
+	left: -50px;
+	transform: rotate(-45deg);
+}
+
+.corners:before {
+	right: -50px;
+	transform: rotate(45deg);
+}
+
+
+.feed {
+	margin: 0 auto;
+	width: 600px;
+	padding: 45px 0;
+}
+
+.post {
+	width: 100%;
+	background-color: #fff;
+	margin: 13px;
+	;
+	margin-left: -16px;
+	min-height: 100px;
+	border: 3px solid #CEB888;
+	border-radius: 3px;
+	padding: 12px 15px;
+}
+
+.post__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.post__profile-name {
+	color: #220707;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+/* Content */
+.post__content {
+	padding: 14px 8px;
+}
+
+.p {
+	font-size: 16px;
+	color: #1d2129;
+}
+
+.post__footer {
+	padding: 2px 10px;
+}
+
+.footer-link {
+	color: red;
+	margin: 0 30px 0 0;
+	text-decoration: none;
+	font-size: 14px;
+	color: #aaa;
+}
+
+.footer-link:hover {
+	color: #1da1f2;
+}
+
+.footer-icon {
+	fill: currentColor;
+	margin-right: 4px;
+	display: inline-block;
+	font-size: 24px;
+}
+
+.footer-link:nth-child(2):hover {
+	color: #17bf63;
+}
+
+.footer-link:nth-child(3):hover {
+	color: #F44336;
+}
+
+
+

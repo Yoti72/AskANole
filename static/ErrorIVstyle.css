@@ -9,23 +9,16 @@
 /* ===================== General ===================== */
 body {
 	margin: 0;
-	/* Remove default margin */
 	padding: 0;
-	/* Remove default padding */
-	background: #782F40;
-	/* Set background color */
+	background: linear-gradient(#782F40, #6e031c);
 	font-family: sans-serif;
-	/* Set default font */
 	text-align: center;
-	/* Center text */
 	overflow-x: hidden
-		/* Hide horizontal scrollbar */
 }
 
 /* ===================== Glitch Effect - Container ===================== */
 p {
 	font-size: 10em;
-	/* Change this to increase/decrease message size */
 	text-transform: uppercase;
 	font-weight: bolder;
 	position: absolute;

@@ -21,7 +21,7 @@
             padding: 5px;
             text-align: left;
         }
-        
+
         h3 {
             color: #CEB888;
             font-family: "Roboto";
@@ -42,28 +42,28 @@
             text-align: center;
         }
         input[type="text"], textarea {
-            width: 100%;  
-            padding: 12px 20px;  
-            margin: 8px 0; 
-            box-sizing: border-box;  
-            border: 2px solid #ccc;  
-            border-radius: 4px;  
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
         }
         input[type="submit"] {
-            width: 100%;  
-            padding: 10px 20px;  
-            margin: 8px 0;  
-            box-sizing: border-box;  
-            border: 2px solid #ccc; 
-            border-radius: 4px;  
-            background-color: #782F40;  
-            color: white;  
-            cursor: pointer;  
+            width: 100%;
+            padding: 10px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #782F40;
+            color: white;
+            cursor: pointer;
         }
 
         .header-lower {
-            padding: 20px;  
-            background-color: white;  
+            padding: 20px;
+            background-color: white;
             font-size: 17px;
             font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
             text-align: center;
@@ -71,21 +71,21 @@
         }
         .main-container {
             background-color: #F6F1E7; /* Cream color */
-         
+
         }
         .logo {
             position: absolute;
-            top: -50px;  
-            left: 50%;  
-            transform: translateX(-50%); 
-            width: 100px;  
-            height: 100px; 
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
 
-        <div class = "addpost-container"> 
+        <div class = "addpost-container">
             <header class="header">
                 <h3>Florida State University</h3>
             </header>
@@ -102,7 +102,7 @@
             <h2>Enter your Title and Description</h2>
         </div>
         <form action="{{url_for('added')}}" method="POST">
-            <input type="text" name="Title" placeholder="Title"> 
+            <input type="text" name="Title" placeholder="Title">
             <textarea name="Description" placeholder="Description" rows="4"></textarea>
             <input type="submit" value="Post">
         </form>
