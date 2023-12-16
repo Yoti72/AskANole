@@ -26,6 +26,17 @@ This is a simple Flask-based web application that allows users to sign up, log i
    ```bash
    cd your-repo
    ```
+4. Start a virtual environment:
+
+   ```bash
+   python -m venv <name_of_virtual_environment>.
+   ```
+   
+5. Activate the vevn:
+
+   ```bash
+   .\.venv\Scripts\activate
+   ```
 
 3. Install the required dependencies:
 
@@ -38,13 +49,7 @@ This is a simple Flask-based web application that allows users to sign up, log i
 1. Run the `Setup.py` script to initialize the database:
 
    ```bash
-   python Setup.py
-   ```
-
-2. Start the Flask application:
-
-   ```bash
-   python main.py
+   python -u "DRIVE:\path\Setup.py"
    ```
 
 3. Open your web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to access the application.
