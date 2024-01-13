@@ -1,7 +1,7 @@
 # AskANole
 “Where Noles Help Noles. Trade, Task, and Triumph Together.”
 
-# Flask Web App with Python, HTML, CSS, and Flash
+# Flask Web App with Python, SQL, HTML, and CSS
 
 ## Project Overview
 
